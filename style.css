@@ -1,0 +1,60 @@
+#intro {
+  text-align: center;
+  z-index: 10;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+
+body {
+  background: white;
+  font-family: 'RelayFun', sans-serif;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+#intro {
+  text-align: center;
+  z-index: 10;
+}
+
+.title {
+  font-size: 64px;
+  position: fixed;
+  top: 250px;
+  left: 690px;
+  z-index: 10;
+}
+
+.subtitle {
+  font-size: 28px;
+  position: fixed;
+  top: 340px;
+  left: 600px;
+  margin-top: 60px;
+}
+
+#startBtn {
+  width: 1000px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+  position: fixed;
+  top: 250px;
+  left: 330px;
+}
+
+#startBtn:hover {
+  transform: scale(1.1);
+}
