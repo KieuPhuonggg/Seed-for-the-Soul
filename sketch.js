@@ -8,14 +8,13 @@ let chordIndex = 0;
 let melodyIndex = 0;
 
 let chords = [
-  ["C4", "E4", "G4"], 
-  ["F4", "A4", "C5"], 
-  ["G4", "B4", "D5"], 
-  ["A3", "C4", "E4"], 
+  ["C4", "E4", "G4"], // C
+  ["F4", "A4", "C5"], // F
+  ["G4", "B4", "D5"], // G
+  ["A3", "C4", "E4"]  // Am
 ];
 
 let melody = ["E4", "G4", "A4", "G4", "E4", "D4", "C4", "D4"];
-
 
 let seedFallingImg, seedSplashImg;
 
@@ -105,7 +104,6 @@ let imageLinks = [
   "assets/seed for the soul-79.png",
   "assets/seed for the soul-80.png",
   "assets/seed for the soul-81.png",
-]
 ]
 
 
@@ -214,10 +212,10 @@ function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("canvasHolder");
 
+  osc = new p5.PolySynth();
+
   seedX = width / 2;
   seedY = -200;
-
-  noLoop();
 
   polySynth = new p5.PolySynth();
 
@@ -227,6 +225,7 @@ function setup() {
       playLoop();
     }
   });
+
 }
 
 function draw() {
@@ -234,7 +233,7 @@ function draw() {
 
   if (state === "falling") {
     imageMode(CENTER);
-    image(seedImg, seedX, seedY); 
+    image(seedImg, seedX, seedY);
 
     seedY += seedSpeed;
 
@@ -247,7 +246,7 @@ function draw() {
 
   else if (state === "splash") {
     imageMode(CENTER);
-    image(splashImg, seedX, height - 200); 
+    image(splashImg, seedX, height - 200);
 
     if (millis() - splashTimer > 2000) {
       state = "showResult";
@@ -256,7 +255,7 @@ function draw() {
       let randomLink = random(imageLinks);
       if (imgElement) imgElement.remove();
       imgElement = createImg(randomLink, "result");
-      imgElement.size(900, 650); 
+      imgElement.size(900, 650);
       imgElement.position(width / 2 - 450, height - 650 - 80);
       imgElement.style("z-index", "5");
 
@@ -266,14 +265,14 @@ function draw() {
 
   else if (state === "showResult") {
     if (selectedQuote) {
-      textFont("RelayFun");    
-      textAlign(CENTER, TOP);  
+      textFont("RelayFun");
+      textAlign(CENTER, TOP);
       textSize(36);
       fill(0);
 
-      let boxWidth = width * 0.8;  
-      let x = width / 2;          
-      let y = height - 488 - 80 - 190; 
+      let boxWidth = width * 0.8;
+      let x = width / 2;
+      let y = height - 488 - 80 - 190;
 
       text(selectedQuote, x - boxWidth / 2, y, boxWidth, 400);
     }
@@ -287,19 +286,7 @@ document.getElementById("startBtn").addEventListener("click", () => {
   seedY = -200;
   if (imgElement) imgElement.remove();
   loop();
-
-  if (!musicStarted) {
-  userStartAudio();   
-  musicStarted = true;
-  playLoop();
-}
-
 });
-
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
 
 function playLoop() {
   if (!musicStarted) return;
@@ -313,5 +300,5 @@ function playLoop() {
   chordIndex = (chordIndex + 1) % chords.length;
   melodyIndex = (melodyIndex + 1) % melody.length;
 
-  setTimeout(playLoop, 1000);
+  setTimeout(playLoop, 2000);
 }
