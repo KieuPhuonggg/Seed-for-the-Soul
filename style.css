@@ -7,7 +7,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: windowHeight;
   overflow: hidden;
 }
 
@@ -30,31 +30,31 @@ body {
 }
 
 .title {
-  font-size: 64px;
+  font-size: 64 px;
   position: fixed;
-  top: 250px;
-  left: 690px;
+  top: 250 px;
+  left: 690 px;
   z-index: 10;
 }
 
 .subtitle {
-  font-size: 28px;
+  font-size: 28 px;
   position: fixed;
-  top: 340px;
-  left: 600px;
-  margin-top: 60px;
+  top: 340 px;
+  left: 600 px;
+  margin-top: 60 px;
 }
 
 #startBtn {
-  width: 1000px;
+  width: 1000 px;
   cursor: pointer;
   user-select: none;
-  transition: transform 0.2s ease;
+  transition: transform 0.2 s ease;
   position: fixed;
-  top: 250px;
-  left: 330px;
+  top: 250 px;
+  left: 330 px;
 }
 
 #startBtn:hover {
-  transform: scale(1.1);
+  transform: scale (1.1);
 }
