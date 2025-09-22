@@ -1,0 +1,38 @@
+body {
+  background: white;
+  font-family: 'RelayFun', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#intro {
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+
+.title {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+#startBtn {
+  width: 300px; /* to hơn */
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+#startBtn:hover {
+  transform: scale(1.1);
+}
