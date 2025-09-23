@@ -7,7 +7,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: windowHeight;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -15,10 +15,9 @@ canvas {
   display: block;
 }
 
-
 body {
   background: white;
-  font-family: 'RelayFun', sans-serif;
+  font-family: "RelayFun", sans-serif;
   margin: 0;
   padding: 0;
   align-items: center;
@@ -30,31 +29,27 @@ body {
 }
 
 .title {
-  font-size: 64 px;
-  position: fixed;
-  top: 250 px;
-  left: 690 px;
+  font-size: 64px;
+  position: center;
+  margin-top: 100px;
   z-index: 10;
 }
 
 .subtitle {
-  font-size: 28 px;
-  position: fixed;
-  top: 340 px;
-  left: 600 px;
-  margin-top: 60 px;
+  font-size: 28px;
+  position: center;
+  margin-top: 60px;
 }
 
 #startBtn {
-  width: 1000 px;
+  width: 1000px;
   cursor: pointer;
   user-select: none;
-  transition: transform 0.2 s ease;
-  position: fixed;
-  top: 250 px;
-  left: 330 px;
+  transition: transform 0.2s ease;
+  position: center;
 }
 
 #startBtn:hover {
-  transform: scale (1.1);
+  transform: scale(1.1);
 }
+
