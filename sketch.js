@@ -247,7 +247,7 @@ function draw() {
       if (imgElement) imgElement.remove();
       imgElement = createImg(randomLink, "result");
       imgElement.size(900, 650);
-      imgElement.position(width / 2 - 450, height - 650);
+      imgElement.position(width / 2 - 450, height - 650 - 80);
       imgElement.style("z-index", "5");
 
       selectedQuote = random(quotes);
@@ -261,7 +261,7 @@ function draw() {
 
       let boxWidth = width * 0.8;
       let x = width / 2;
-      let y = height - 488 - 80 - 130;
+      let y = height - 488 - 80 - 180;
 
       text(selectedQuote, x - boxWidth / 2, y, boxWidth, 400);
     }
@@ -299,4 +299,3 @@ function windowResized() {
     imgElement.position(width / 2 - 450, height - 650);
   }
 }
-
